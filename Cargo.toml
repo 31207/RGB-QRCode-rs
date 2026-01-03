@@ -1,0 +1,12 @@
+[package]
+name = "rgb-qrcode-rs"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+qrcode = "0.14"
+image = "0.25"
+anyhow = "1.0"
+zxing-cpp = "0.3"
+quircs = "0.10"
+
