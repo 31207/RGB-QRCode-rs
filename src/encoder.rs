@@ -27,7 +27,8 @@ impl Encoder {
         let mut codes: Vec<QrCode> = Vec::new();
         for part in parts {
             codes.push(
-                QrCode::new(part).context("failed to create initial QR for version calculation")?,
+                QrCode::with_error_correction_level(part, self.error_correction.to_ec_level())
+                    .context("failed to create QR code")?,
             );
         }
         let versions: Vec<Version> = codes.iter().map(|c| c.version()).collect();
